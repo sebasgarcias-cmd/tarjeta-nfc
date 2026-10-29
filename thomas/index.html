@@ -111,13 +111,43 @@
   .save:active { transform: scale(.985); }
   .save svg { width: 20px; height: 20px; }
 
-  .toast {
-    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
-    background: var(--green-dark); color: var(--white); padding: 12px 18px; border-radius: 12px;
-    font-size: .9rem; font-weight: 500; max-width: calc(100% - 32px); text-align: center;
-    opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+  .sheet {
+    border: 0; padding: 0; margin: auto auto 0; width: 100%; max-width: 440px;
+    background: transparent; color: var(--ink);
   }
-  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+  .sheet::backdrop { background: rgba(0,0,0,.45); }
+  .sheet-body {
+    background: var(--white); border-radius: 18px 18px 0 0;
+    padding: 22px 20px calc(22px + env(safe-area-inset-bottom));
+  }
+  .sheet h2 {
+    font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .04em; font-size: .95rem; color: var(--green-dark);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .close { border: 0; background: none; font-size: 1.6rem; line-height: 1; color: var(--gray); cursor: pointer; padding: 0 4px; }
+  .qr { display: block; width: 180px; height: 180px; margin: 16px auto 4px; border-radius: 10px; border: 1px solid var(--line); }
+  .qr[hidden], .qr-hint[hidden] { display: none; }
+  .qr-hint { text-align: center; color: var(--gray); font-size: .8rem; }
+  .id-row {
+    display: flex; align-items: center; gap: 10px; margin-top: 16px;
+    border: 1px solid var(--line); border-radius: 12px; padding: 10px 10px 10px 14px;
+  }
+  .id-row span { font-size: 1.05rem; font-weight: 600; flex: 1; }
+  .copy {
+    border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
+    background: var(--green); color: var(--white); font: inherit; font-weight: 600; font-size: .85rem;
+  }
+  .copy.done { background: var(--green-dark); }
+  .steps { margin: 16px 0 0 18px; color: var(--ink); font-size: .92rem; line-height: 1.55; }
+  .steps li { margin-bottom: 4px; }
+  .steps em { font-style: normal; color: var(--gray); }
+  .open-wc {
+    margin-top: 16px; width: 100%; display: block; text-align: center; text-decoration: none;
+    padding: 14px; border-radius: 12px; border: 1.5px solid var(--green); color: var(--green);
+    font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .06em; font-size: .8rem;
+  }
 </style>
 </head>
 <body>
@@ -148,7 +178,7 @@
         <span class="icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.7 3.5C4.6 3.5 1.3 6.3 1.3 9.7c0 2 1.1 3.7 2.8 4.9l-.7 2.1 2.5-1.3c.9.2 1.8.4 2.8.4h.7a5.6 5.6 0 0 1-.2-1.6c0-3.4 3.2-6.1 7.1-6.1h.6C16.2 5.6 12.8 3.5 8.7 3.5zM6.3 8.5a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm4.9 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm11.5 5.7c0-2.9-2.9-5.2-6.3-5.2-3.5 0-6.3 2.3-6.3 5.2s2.8 5.2 6.3 5.2c.7 0 1.4-.1 2.1-.3l2 1.1-.6-1.8c1.6-.9 2.8-2.5 2.8-4.2zm-8.4-.9a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm4.2 0a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/></svg>
         </span>
-        <span class="label"><b>WeChat</b><span>+57 316 472 8549</span><small>Tap to copy</small></span>
+        <span class="label"><b>WeChat</b><span>+57 316 472 8549</span><small>Tap to add me</small></span>
         <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
       </button>
 
@@ -168,18 +198,33 @@
   </section>
 </main>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog class="sheet" id="wechat-sheet" aria-labelledby="wc-title">
+  <div class="sheet-body">
+    <h2 id="wc-title">Add me on WeChat <button class="close" type="button" id="wc-close" aria-label="Close">&times;</button></h2>
+    <img class="qr" id="wc-qr" src="wechat-qr.png" alt="WeChat QR code" hidden>
+    <p class="qr-hint" id="wc-qr-hint" hidden>Save this image and scan it in WeChat (Scan &rarr; Album)</p>
+    <div class="id-row">
+      <span>+57 316 472 8549</span>
+      <button class="copy" type="button" id="wc-copy">Copy</button>
+    </div>
+    <ol class="steps">
+      <li>Copy the number.</li>
+      <li>In WeChat, tap <b>+</b> &rarr; <b>Add Contacts</b> <em>(添加朋友)</em>.</li>
+      <li>Paste the number and search.</li>
+    </ol>
+    <a class="open-wc" href="weixin://" id="wc-open">Open WeChat</a>
+  </div>
+</dialog>
 
 <script>
   var WECHAT_ID = "+573164728549";
-  var toast = document.getElementById("toast");
-  var timer;
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add("show");
-    clearTimeout(timer);
-    timer = setTimeout(function () { toast.classList.remove("show"); }, 3500);
-  }
+  var sheet = document.getElementById("wechat-sheet");
+  var copyBtn = document.getElementById("wc-copy");
+  var qr = document.getElementById("wc-qr");
+  qr.addEventListener("load", function () {
+    qr.hidden = false;
+    document.getElementById("wc-qr-hint").hidden = false;
+  });
   function copy(text) {
     if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
     var t = document.createElement("textarea");
@@ -188,17 +233,22 @@
     try { document.execCommand("copy"); } finally { document.body.removeChild(t); }
     return Promise.resolve();
   }
+  function doCopy() {
+    return copy(WECHAT_ID).then(function () {
+      copyBtn.textContent = "Copied";
+      copyBtn.classList.add("done");
+    }, function () {});
+  }
   document.getElementById("wechat").addEventListener("click", function () {
-    copy(WECHAT_ID).then(function () {
-      showToast("Number copied. Paste it in WeChat search to add me.");
-    }, function () {
-      showToast("Search " + WECHAT_ID + " in WeChat to add me.");
-    });
-    // Opens the WeChat app on phones that have it installed
-    if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
-      setTimeout(function () { window.location.href = "weixin://"; }, 600);
-    }
+    copyBtn.textContent = "Copy";
+    copyBtn.classList.remove("done");
+    sheet.showModal();
   });
+  copyBtn.addEventListener("click", doCopy);
+  // Copy before leaving for the app, so the number is ready to paste
+  document.getElementById("wc-open").addEventListener("click", function () { doCopy(); });
+  document.getElementById("wc-close").addEventListener("click", function () { sheet.close(); });
+  sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
 </script>
 
 </body>
