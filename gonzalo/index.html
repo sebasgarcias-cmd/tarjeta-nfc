@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gonzalo Castaño · MotoXperts</title>
+<meta name="description" content="LATAM Regional Aftersales Manager at MotoXperts. WhatsApp and WeChat.">
+<meta property="og:title" content="Gonzalo Castaño · MotoXperts">
+<meta property="og:description" content="LATAM Regional Aftersales Manager at MotoXperts">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://card.motoxperts.us/gonzalo/">
+<meta property="og:image" content="https://card.motoxperts.us/gonzalo/gonzalo.jpg">
+<meta property="og:image:width" content="480">
+<meta property="og:image:height" content="480">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#006C5B">
+<link rel="icon" href="gonzalo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500;125,600&family=Inter:wght@400;500;600&family=Syncopate&display=swap" rel="stylesheet">
+<style>
+  /* Phelon & Moore palette */
+  :root {
+    --green: #006C5B;
+    --green-dark: #004D44;
+    --gray: #5E5E5E;
+    --ink: #000000;
+    --white: #FFFFFF;
+    --bg: #F3F5F4;
+    --line: #DDE4E2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: linear-gradient(160deg, var(--green) 0%, var(--green-dark) 100%);
+    padding: 36px 16px 156px;
+    display: flex; justify-content: center;
+  }
+  .logo { width: 210px; max-width: 64%; height: auto; display: block; }
+
+  main {
+    width: 100%; max-width: 440px; margin: -72px auto 0; padding: 0 16px 40px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .card {
+    width: 100%; background: var(--white); border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 10px 30px rgba(0,77,68,.10);
+    padding: 0 20px 24px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .photo {
+    width: 136px; height: 136px; border-radius: 50%;
+    object-fit: cover; margin-top: -56px;
+    border: 4px solid var(--white);
+    box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  }
+  h1 {
+    font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .02em;
+    font-size: 1.2rem; line-height: 1.25; text-align: center; margin-top: 18px;
+  }
+  .role { color: var(--gray); font-size: .95rem; margin-top: 8px; text-align: center; line-height: 1.45; }
+  .company {
+    font-family: "Syncopate", sans-serif; text-transform: uppercase;
+    color: var(--green); font-size: .72rem; letter-spacing: .14em; margin-top: 10px;
+  }
+  .rule { width: 40px; height: 2px; background: var(--green); margin: 22px 0 6px; border-radius: 2px; }
+
+  .actions { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+  .btn {
+    display: flex; align-items: center; gap: 14px;
+    width: 100%; padding: 12px 14px;
+    background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+    color: var(--ink); text-decoration: none; font: inherit; text-align: left; cursor: pointer;
+    transition: transform .12s ease, border-color .12s ease, background .12s ease;
+  }
+  .btn:hover { border-color: var(--green); background: #F7FAF9; }
+  .btn:active { transform: scale(.985); }
+  .btn:focus-visible, .save:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+  .icon {
+    flex: none; width: 42px; height: 42px; border-radius: 10px;
+    display: grid; place-items: center;
+    background: var(--green); color: var(--white);
+  }
+  .icon svg { width: 22px; height: 22px; }
+  .label { display: flex; flex-direction: column; min-width: 0; }
+  .label b {
+    font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600;
+    text-transform: uppercase; font-size: .78rem; letter-spacing: .06em; color: var(--green-dark);
+  }
+  .label span { color: var(--ink); font-size: .92rem; margin-top: 3px; overflow-wrap: break-word; }
+  .label small { color: var(--gray); font-size: .78rem; margin-top: 2px; }
+  .chev { margin-left: auto; color: #9AA5A2; flex: none; }
+
+  .save {
+    margin-top: 18px; width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 15px; border-radius: 12px; border: 0;
+    background: var(--green); color: var(--white);
+    font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .06em; font-size: .85rem; text-decoration: none;
+    transition: background .12s ease;
+  }
+  .save:hover { background: var(--green-dark); }
+  .save:active { transform: scale(.985); }
+  .save svg { width: 20px; height: 20px; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
+    background: var(--green-dark); color: var(--white); padding: 12px 18px; border-radius: 12px;
+    font-size: .9rem; font-weight: 500; max-width: calc(100% - 32px); text-align: center;
+    opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+  .sheet {
+    border: 0; padding: 0; margin: auto auto 0; width: 100%; max-width: 440px;
+    background: transparent; color: var(--ink);
+  }
+  .sheet::backdrop { background: rgba(0,0,0,.45); }
+  .sheet-body {
+    background: var(--white); border-radius: 18px 18px 0 0;
+    padding: 22px 20px calc(22px + env(safe-area-inset-bottom));
+  }
+  .sheet h2 {
+    font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .04em; font-size: .95rem; color: var(--green-dark);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .close { border: 0; background: none; font-size: 1.6rem; line-height: 1; color: var(--gray); cursor: pointer; padding: 0 4px; }
+  .qr { display: block; width: 180px; height: 180px; margin: 16px auto 4px; border-radius: 10px; border: 1px solid var(--line); }
+  .qr[hidden], .qr-hint[hidden] { display: none; }
+  .qr-hint { text-align: center; color: var(--gray); font-size: .8rem; }
+  .id-row {
+    display: flex; align-items: center; gap: 10px; margin-top: 16px;
+    border: 1px solid var(--line); border-radius: 12px; padding: 10px 10px 10px 14px;
+  }
+  .id-row span { font-size: 1.05rem; font-weight: 600; flex: 1; }
+  .copy {
+    border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
+    background: var(--green); color: var(--white); font: inherit; font-weight: 600; font-size: .85rem;
+  }
+  .copy.done { background: var(--green-dark); }
+  .steps { margin: 16px 0 0 18px; color: var(--ink); font-size: .92rem; line-height: 1.55; }
+  .steps li { margin-bottom: 4px; }
+  .steps em { font-style: normal; color: var(--gray); }
+  .open-wc {
+    margin-top: 16px; width: 100%; display: block; text-align: center; text-decoration: none;
+    padding: 14px; border-radius: 12px; border: 1.5px solid var(--green); color: var(--green);
+    font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .06em; font-size: .8rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="../img/motoxperts.png" alt="MotoXperts">
+</header>
+
+<main>
+  <section class="card">
+    <img class="photo" src="gonzalo.jpg" alt="Gonzalo Castaño">
+    <h1>Gonzalo Castaño</h1>
+    <p class="role">LATAM Regional Aftersales Manager</p>
+    <p class="company">MotoXperts</p>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <div class="actions">
+      <a class="btn" href="https://wa.me/573017673531" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.250-.46-2.380-1.470-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.080c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.43-9.440 9.43zm8.03-17.46A11.3 11.3 0 0 0 12.05.7C5.79.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.4l5.81-1.52a11.3 11.3 0 0 0 5.630 1.43h.01c6.26 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+        </span>
+        <span class="label"><b>WhatsApp</b><span>+57 301 767 3531</span></span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+
+      <button class="btn" type="button" id="wechat">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.7 3.5C4.6 3.5 1.3 6.3 1.3 9.7c0 2 1.1 3.7 2.8 4.9l-.7 2.1 2.5-1.3c.9.2 1.8.4 2.8.4h.7a5.6 5.6 0 0 1-.2-1.6c0-3.4 3.2-6.1 7.1-6.1h.6C16.2 5.6 12.8 3.5 8.7 3.5zM6.3 8.5a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm4.9 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm11.5 5.7c0-2.9-2.9-5.2-6.3-5.2-3.5 0-6.3 2.3-6.3 5.2s2.8 5.2 6.3 5.2c.7 0 1.4-.1 2.1-.3l2 1.1-.6-1.8c1.6-.9 2.8-2.5 2.8-4.2zm-8.4-.9a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm4.2 0a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/></svg>
+        </span>
+        <span class="label"><b>WeChat</b><span>+57 301 767 3531</span><small>Tap to add me</small></span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+
+
+    </div>
+
+    <a class="save" href="gonzalo.vcf" download="Gonzalo Castano - MotoXperts.vcf">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      Save contact
+    </a>
+  </section>
+</main>
+
+<dialog class="sheet" id="wechat-sheet" aria-labelledby="wc-title">
+  <div class="sheet-body">
+    <h2 id="wc-title">Add me on WeChat <button class="close" type="button" id="wc-close" aria-label="Close">&times;</button></h2>
+    <img class="qr" id="wc-qr" src="wechat-qr.png" alt="WeChat QR code" hidden>
+    <p class="qr-hint" id="wc-qr-hint" hidden>Save this image and scan it in WeChat (Scan &rarr; Album)</p>
+    <div class="id-row">
+      <span>+57 301 767 3531</span>
+      <button class="copy" type="button" id="wc-copy">Copy</button>
+    </div>
+    <ol class="steps">
+      <li>Copy the number.</li>
+      <li>In WeChat, tap <b>+</b> &rarr; <b>Add Contacts</b> <em>(添加朋友)</em>.</li>
+      <li>Paste the number and search.</li>
+    </ol>
+    <a class="open-wc" href="weixin://" id="wc-open">Open WeChat</a>
+  </div>
+</dialog>
+
+<script>
+  var WECHAT_ID = "+573017673531";
+  var sheet = document.getElementById("wechat-sheet");
+  var copyBtn = document.getElementById("wc-copy");
+  var qr = document.getElementById("wc-qr");
+  qr.addEventListener("load", function () {
+    qr.hidden = false;
+    document.getElementById("wc-qr-hint").hidden = false;
+  });
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    var t = document.createElement("textarea");
+    t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); } finally { document.body.removeChild(t); }
+    return Promise.resolve();
+  }
+  function doCopy() {
+    return copy(WECHAT_ID).then(function () {
+      copyBtn.textContent = "Copied";
+      copyBtn.classList.add("done");
+    }, function () {});
+  }
+  document.getElementById("wechat").addEventListener("click", function () {
+    copyBtn.textContent = "Copy";
+    copyBtn.classList.remove("done");
+    sheet.showModal();
+  });
+  copyBtn.addEventListener("click", doCopy);
+  // Copy before leaving for the app, so the number is ready to paste
+  document.getElementById("wc-open").addEventListener("click", function () { doCopy(); });
+  document.getElementById("wc-close").addEventListener("click", function () { sheet.close(); });
+  sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
+</script>
+
+</body>
+</html>
